@@ -37,7 +37,7 @@ namespace AshCommerce.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (actor == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(actor);
@@ -76,7 +76,7 @@ namespace AshCommerce.Controllers
             var actor = await _context.Actors.FindAsync(id);
             if (actor == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
             return View(actor);
         }
@@ -90,7 +90,7 @@ namespace AshCommerce.Controllers
         {
             if (id != actor.Id)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             if (ModelState.IsValid)
@@ -104,7 +104,7 @@ namespace AshCommerce.Controllers
                 {
                     if (!ActorExists(actor.Id))
                     {
-                        return NotFound();
+                        return View("NotFound");
                     }
                     else
                     {
@@ -121,14 +121,14 @@ namespace AshCommerce.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var actor = await _context.Actors
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (actor == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(actor);

@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AshCommerce.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace AshCommerce.Models
 {
-    public class Cinema
+    public class Cinema : IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -19,7 +20,7 @@ namespace AshCommerce.Models
         [Required(ErrorMessage = "Cinema description is required")]
         public string? Description { get; set; }
 
-        //relations 
-        public List<Movie>? Movies { get; set; }
+        //Relationships
+        public List<Movie> Movies { get; set; }
     }
 }

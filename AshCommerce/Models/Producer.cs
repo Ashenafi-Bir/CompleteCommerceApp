@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AshCommerce.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace AshCommerce.Models
 {
-    public class Producer
+    public class Producer : IEntityBase
     {
         [Key]
         public int Id { get; set; }
